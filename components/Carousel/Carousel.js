@@ -5,11 +5,24 @@ class Carousel {
         this.rightButton = this.el.querySelector('.right-button');
         this.img = this.el.querySelectorAll('img')
         this.imgArray = Array.from(this.img).map( img => img);
-        this.rightButton.addEventListener('click', () => this.show())
+        this.count = 0;
+        this.rightButton.addEventListener('click', () => this.goRight());
+        this.leftButton.addEventListener('click', () => this.goLeft());
     }
 
-    show() {
-        
+    goRight() {
+        console.log('Hello');
+        this.imgArray[this.count].style.display = 'none';
+        if (this.count > 0) {
+            this.count += 1;
+            this.imgArray[this.count].style.display = 'block';
+        } else {
+            this.counter = this.img.length - 1;
+            this.imgArray[this.count].style.display = 'block';
+        }
+    }
+    goLeft() {
+
     }
 }
 
