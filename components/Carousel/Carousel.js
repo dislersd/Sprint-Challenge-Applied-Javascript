@@ -3,9 +3,26 @@ class Carousel {
         this.el = element;
         this.leftButton = this.el.querySelector('.left-button');
         this.rightButton = this.el.querySelector('.right-button');
+        this.img = this.el.querySelectorAll('img')
+        this.imgArray = Array.from(this.img).map( img => img);
+        this.rightButton.addEventListener('click', () => this.show())
+    }
+
+    show() {
         
     }
 }
+
+
+// class CurrentImg {
+//     constructor(imgElement) {
+//         this.el = imgElement;
+//     }
+//     show() {
+//         this.el.style.opacity = '1'
+//         this.el.style.display = 'block'
+//     }
+// }
 
 let carousel = document.querySelector('.carousel');
 new Carousel(carousel);
